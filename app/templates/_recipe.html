@@ -1,0 +1,17 @@
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('main.user', username=recipe.user.name) }}">
+                <img src="{{ recipe.user.avatar(70) }}"/>
+            </a>
+        </td>
+        <td>
+            <a href="{{ url_for('main.user', username=recipe.user.name) }}">
+                {{ recipe.user.name }}
+            </a>
+            created a recipe:
+            <br>
+            {{ recipe.name }}
+        </td>
+    </tr>
+</table>
