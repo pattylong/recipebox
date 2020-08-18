@@ -61,6 +61,13 @@ def search():
     return render_template('search.html', title='Search', recipes=recipes, next_url=next_url, prev_url=prev_url)
 
 
+@bp.route('/user/<username>/popup')
+def user_popup(username):
+    user = User.query.filter_by(name=username).first_or_404()
+    form = EmptyForm()
+    return render_template('user_popup.html', user=user, form=form)
+
+
 @bp.route('/users', methods=['GET'])
 @login_required
 def get_all_users():

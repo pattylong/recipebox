@@ -6,9 +6,11 @@
             </a>
         </td>
         <td>
-            <a href="{{ url_for('main.user', username=recipe.user.name) }}">
-                {{ recipe.user.name }}
-            </a>
+            <span class="user_popup">
+                <a href="{{ url_for('main.user', username=recipe.user.name) }}">
+                    {{ recipe.user.name }}
+                 </a>
+            </span>
             created a recipe:
             <br>
             {{ recipe.name }}
