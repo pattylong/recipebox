@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+<h1> {{ recipe.name }} </h1>
+<br> Created By: <a href="{{ url_for('main.user', username=recipe.user.name) }}">
+                {{ recipe.user.name }}</a>
+
+<p>
+    Ingredients: <br> {{ recipe.ingredients }}
+</p>
+
+<p>
+    Instructions: <br> {{ recipe.instructions }}
+</p>
+{% endblock %}

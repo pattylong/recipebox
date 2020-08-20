@@ -178,6 +178,17 @@ def unfollow(username):
         return redirect(url_for('main.home'))
 
 
+@bp.route('/recipes/<int:recipe_id>', methods=['GET'])
+def get_recipe_with_id(recipe_id):
+    recipe = db.session.query(Recipe).filter_by(id=recipe_id).first()
+    if not recipe:
+        abort(404)
+    return render_template('recipe_full.html', recipe=recipe)
+
+
+"""
+### ~~~~~~~~ API ~~~~~~~~~ ###
+
 @bp.route('/recipes', methods=['GET'])
 def get_all_recipes():
     data = []
@@ -278,5 +289,5 @@ def get_tag_recipes(tag_id):
 
 
 
-
+"""
 
